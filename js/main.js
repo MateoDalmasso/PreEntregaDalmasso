@@ -8,16 +8,18 @@ function impuestoArgentina(precio) {
     }
 }
 
-function impuestoChile(precio){
-    while(precio != 0){
-    preciototal = precio * 1.19
-    alert('Su precio es: ' + preciototal)}
+function impuestoChile(precio) {
+    while (precio != 0) {
+        preciototal = precio * 1.19
+        alert('Su precio es: ' + preciototal)
+    }
 }
 
 function impuestoUruguay(precio) {
-    while(precio !=0 ){
-    preciototal = precio * 1.22
-    alert('Su precio es: ' + preciototal)}
+    while (precio != 0) {
+        preciototal = precio * 1.22
+        alert('Su precio es: ' + preciototal)
+    }
 }
 
 let pais = prompt('Ingrese su pais: ')
@@ -29,22 +31,11 @@ if (pais === 'Argentina') {
 }
 
 
-if (pais === 'Chile') {
+else if  (pais === 'Chile') {
     impuestoChile(precio)
 }
 
 
-if (pais === 'Uruguay') {
+else if  (pais === 'Uruguay') {
     impuestoUruguay(precio)
 }
-
-
-
-
-
-
-
-
-
-
-
