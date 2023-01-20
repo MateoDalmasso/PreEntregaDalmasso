@@ -1,41 +1,59 @@
-alert('Para calcular sus precios ingrese su pais (Solo disponible en Argentina, Uruguay y Chile')
-
-function impuestoArgentina(precio) {
-    while (precio != 0) {
-        preciototal = precio * 1.75
-        alert('Su precio es: ' + preciototal)
-        precio = prompt('Ingrese otro precio: ')
+class Juego {
+    constructor(entrada) {
+        this.precio = parseFloat(entrada.precio)
+        this.pais = entrada.pais
     }
 }
 
-function impuestoChile(precio) {
-    while (precio != 0) {
-        preciototal = precio * 1.19
-        alert('Su precio es: ' + preciototal)
+
+let pais
+let precio
+const Carrito = []
+
+while (precio !== 0) {
+    precio = parseFloat(prompt('Ingrese el precio del producto. Para finalizar ponga 0'))
+    if (precio !== 0) {
+        Carrito.push(precio)
     }
 }
 
-function impuestoUruguay(precio) {
-    while (precio != 0) {
-        preciototal = precio * 1.22
-        alert('Su precio es: ' + preciototal)
-    }
-}
 
-let pais = prompt('Ingrese su pais: ')
-let precio = prompt('Ingrese un precio, ponga 0 para cerrar el programa: ')
+let total = 0
+for (let i of Carrito) { total += i }
+console.log(total)
 
+pais = prompt('Ingrese Argentina, Chile o Uruguay')
 
 if (pais === 'Argentina') {
-    impuestoArgentina(precio)
+    calcularivaArg(total)
 }
 
 
-else if  (pais === 'Chile') {
-    impuestoChile(precio)
+else if (pais === 'Chile') {
+    calcularivachile(total)
 }
 
 
-else if  (pais === 'Uruguay') {
-    impuestoUruguay(precio)
+else if (pais === 'Uruguay') {
+    calcularivaUy(total)
+}
+
+
+function calcularivaArg() {
+    totalconimpuestos = total * 1.75;
+    alert('Su total es ' + totalconimpuestos)
+}
+
+
+function calcularivachile() {
+    totalconimpuestos = total * 1.19;
+    alert('Su total es ' + totalconimpuestos)
+}
+
+
+
+function calcularivaUy() {
+    totalconimpuestos = total * 1.21;
+    alert('Su total es ' + totalconimpuestos)
+
 }
